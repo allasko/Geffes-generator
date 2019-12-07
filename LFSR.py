@@ -9,7 +9,7 @@ class LFSR:
         self.register = _initRegister
         self.polynomial = _polynomial
         if len(_initRegister) < _polynomial[0] - 1:
-            raise ValueError("Polynomial degree is too small!")
+            raise ValueError("Polynomial degree is too big!")
 
     def makeLFSR(self, n):
         output = []
@@ -21,7 +21,6 @@ class LFSR:
             output = [first] + output
             self.register.pop(0)
             self.register.append(sum % 2)
-        print(str(output))
         zeros = 0
         ones = 0
         for i in output:
@@ -29,10 +28,5 @@ class LFSR:
                 ones += 1
             else:
                 zeros += 1
-        print("Zeros: " + str(zeros / len(output)))
-        print("Ones: " + str(ones / len(output)))
-
         return output
 
-    def getLen(self):
-        return self.lengthOfRegister

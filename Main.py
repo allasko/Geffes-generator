@@ -5,5 +5,5 @@ from tkinter import *
 root = Tk()
 # Size of the window
 app = Window(root)
-root.geometry("750x300")
+root.geometry("1200x510")
 root.mainloop()
